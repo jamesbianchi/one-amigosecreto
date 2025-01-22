@@ -1,9 +1,10 @@
-//O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. 
-// Aqui você deverá desenvolver a lógica para resolver o problema.
+//O principal objetivo deste desafio é fortalecer as habilidades em lógica de programação. 
 
 //Cria uma lista para armazenar o nome dos amigos
+
 let listaDeAmigos = [];
 let i;
+let nomeSorteado = "";
 
 // função para adicionar os nomes dos participantes  aa lista de amigos
 function adicionarAmigo() {  
@@ -14,8 +15,8 @@ function adicionarAmigo() {
             listarAmigos();    
         } else {
             alert("Por favor, insira um nome");
-        }
-        console.log(listaDeAmigos);   
+
+        }   
 }  
 
 //Função que limpa o campo de entrada de nomes 
@@ -37,25 +38,31 @@ function listarAmigos() {
 }
 
 function sortearAmigo() {
-    
-    if (listaDeAmigos.length > 0) {
-        i = listaDeAmigos.length;
-        //alert(`Total do Array ${i}`);
-        let indiceAleatorio = parseInt(Math.random() * i);
-        let nomeSorteado = listaDeAmigos[indiceAleatorio];
-        limparListaAmigos();
-        listaAmigoSorteado = document.getElementById('resultado');
-        listaAmigoSorteado.innerHTML = nomeSorteado;
+    if (nomeSorteado == ""){
+        
+        if (listaDeAmigos.length > 0) {
+            i = listaDeAmigos.length;
+            //alert(`Total do Array ${i}`);
+            let indiceAleatorio = parseInt(Math.random() * i);
+            nomeSorteado = listaDeAmigos[indiceAleatorio];
+            limparListaAmigos();
+            listaAmigoSorteado = document.getElementById('resultado');
+            listaAmigoSorteado.innerHTML = nomeSorteado;
+        } else {
+            reiniciarAmigoSecreto();
+        }
+
     } else {
         reiniciarAmigoSecreto();
     }
-
+    
 }
 
 function reiniciarAmigoSecreto(){
     limpaCampo();
     limparListaAmigos();
     listaDeAmigos = [];
+    nomeSorteado = "";
    
 }   
 
@@ -66,5 +73,6 @@ function limparListaAmigos(){
 
     listaAmigoSorteado = document.getElementById('resultado');
     listaAmigoSorteado.innerHTML = ''; // Limpa o nome sorteado no HTML dentro da ul
+    console.log(nomeSorteado);
 
 }
