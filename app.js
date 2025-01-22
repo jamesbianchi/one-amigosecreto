@@ -30,9 +30,35 @@ function listarAmigos() {
     let listaAmigosElement = document.getElementById('listaAmigos');
     listaAmigosElement.innerHTML = ''; // Limpa a lista antes de atualizar
 
-    for (let amigo of listaDeAmigos) {
+    for (let nomes of listaDeAmigos) {
         let listItem = document.createElement('li');
-        listItem.textContent = amigo;
+        listItem.textContent = nomes;
         listaAmigosElement.appendChild(listItem);
     }
+}
+
+function sortearAmigo() {
+
+    if (listaDeAmigos.length > 0) {
+        let i = listaDeAmigos.length;
+        let indiceAleatorio = parseInt(Math.random() * i +1);
+        
+        alert(`Índice Gerado = ${indiceAleatorio}`);
+        reiniciarAmigoSecreto();
+    } else {
+        reiniciarAmigoSecreto();
+    }
+
+}
+
+function reiniciarAmigoSecreto(){
+    limpaCampo();
+    limparListaAmigos();
+   
+}   
+
+function limparListaAmigos(){
+    listaDeAmigos = [];
+    listaAmigosElement = document.getElementById('listaAmigos');
+    listaAmigosElement.innerHTML = ''; // Limpa todo o HTML dentro da ul
 }
