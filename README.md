@@ -17,9 +17,7 @@ Os nomes inseridos serão exibidos em uma lista visível na página, e ao finali
 OBS. O propósito no desenvolvimento deste aplicativo foi praticar os conceitos adquiridos sobre lógica de programação.
 </p>
 
-  ![amigo secreto](https://github.com/user-attachments/assets/824d57cb-7441-4126-87e9-2ccaa302f791)
-
-<h1 align=""> 🔨Funcionalidades: </h1>
+<h1> 🔨Funcionalidades: </h1>
 
 1. Adicionar nomes: Os usuários escreverão o nome de um amigo em um campo de texto e o adicionarão a uma lista visível ao clicar em "Adicionar".
 
@@ -28,6 +26,7 @@ OBS. O propósito no desenvolvimento deste aplicativo foi praticar os conceitos 
 3. Visualizar a lista: Os nomes inseridos aparecerão em uma lista abaixo do campo de entrada.
 
 4. Sorteio aleatório: Ao clicar no botão "Sortear Amigo", um nome da lista será selecionado aleatoriamente e exibido na página.
+5. Após o sorteio de um nome da lista, ao clicar novamente no botão "Sortear Amigo" a aplicação vai se reiniciar.
  
 
 <h1> ✔️ Linguagens utilizadas </h1>
@@ -39,4 +38,8 @@ OBS. O propósito no desenvolvimento deste aplicativo foi praticar os conceitos 
 
    ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
+<h1> ✔️ Onde acessar a aplicação </h1>
 
+A aplicação poderá ser acessada através do link: https://one-amigosecreto.vercel.app/.
+
+![amigo secreto](assets/img-sistema.png)
