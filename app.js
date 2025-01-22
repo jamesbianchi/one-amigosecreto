@@ -3,21 +3,20 @@
 
 //Cria uma lista para armazenar o nome dos amigos
 let listaDeAmigos = [];
+let i;
 
 // função para adicionar os nomes dos participantes  aa lista de amigos
-function adicionarAmigo() {
-
-    let nome = document.querySelector('input').value;
-    if (nome != ''){
-        listaDeAmigos.push(nome);
-        limpaCampo();
-        listarAmigos();    
-    }else {
-        alert("Por favor, insira um nome");
-    }
-    console.log(listaDeAmigos);
-   
-}    
+function adicionarAmigo() {  
+        let nome = document.querySelector('input').value;
+        if (nome != ''){
+            listaDeAmigos.push(nome);
+            limpaCampo();
+            listarAmigos();    
+        } else {
+            alert("Por favor, insira um nome");
+        }
+        console.log(listaDeAmigos);   
+}  
 
 //Função que limpa o campo de entrada de nomes 
 function limpaCampo() {
@@ -38,13 +37,15 @@ function listarAmigos() {
 }
 
 function sortearAmigo() {
-
+    
     if (listaDeAmigos.length > 0) {
-        let i = listaDeAmigos.length;
-        let indiceAleatorio = parseInt(Math.random() * i +1);
-        
-        alert(`Índice Gerado = ${indiceAleatorio}`);
-        reiniciarAmigoSecreto();
+        i = listaDeAmigos.length;
+        //alert(`Total do Array ${i}`);
+        let indiceAleatorio = parseInt(Math.random() * i);
+        let nomeSorteado = listaDeAmigos[indiceAleatorio];
+        limparListaAmigos();
+        listaAmigoSorteado = document.getElementById('resultado');
+        listaAmigoSorteado.innerHTML = nomeSorteado;
     } else {
         reiniciarAmigoSecreto();
     }
@@ -54,11 +55,16 @@ function sortearAmigo() {
 function reiniciarAmigoSecreto(){
     limpaCampo();
     limparListaAmigos();
+    listaDeAmigos = [];
    
 }   
 
 function limparListaAmigos(){
-    listaDeAmigos = [];
+    
     listaAmigosElement = document.getElementById('listaAmigos');
     listaAmigosElement.innerHTML = ''; // Limpa todo o HTML dentro da ul
+
+    listaAmigoSorteado = document.getElementById('resultado');
+    listaAmigoSorteado.innerHTML = ''; // Limpa o nome sorteado no HTML dentro da ul
+
 }
